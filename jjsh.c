@@ -56,9 +56,9 @@ int jjsh_get(char **args)
 {
   char command[128];
   if (args[1] == NULL) {
-    snprintf(command, sizeof(command), "/root/programming/pyscripts/get.py");
+    snprintf(command, sizeof(command), "/home/ubuntu/workspace/jjsh/pyscripts/get.py");
   } else {
-    snprintf(command, sizeof(command), "/root/programming/pyscripts/get.py -strings %s", args[1]);
+    snprintf(command, sizeof(command), "/home/ubuntu/workspace/jjsh/pyscripts/get.py -strings %s", args[1]);
   }
   system(command);
   return 1;
@@ -66,20 +66,20 @@ int jjsh_get(char **args)
 
 int jjsh_help(char **args)
 {
-  system("/root/programming/pyscripts/help.py");
+  system("/home/ubuntu/workspace/jjsh/pyscripts/help.py");
   return 1;
 }
 
 int jjsh_ipconfig(char **args)
 {
-  system("/root/programming/pyscripts/ipconfig.py");
+  system("/home/ubuntu/workspace/jjsh/pyscripts/ipconfig.py");
   return 1;
 }
 
 int jjsh_pwd(char **args)
 {
 
-  system("/root/programming/pyscripts/pwd.py");
+  system("/home/ubuntu/workspace/jjsh/pyscripts/pwd.py");
   return 1;
 }
 
@@ -203,9 +203,9 @@ void jjsh_loop(void)
   do {
 
     if (getuid() == 0)
-      system("/root/programming/pyscripts/rprompt.py");
+      system("/home/ubuntu/workspace/jjsh/pyscripts/rprompt.py");
     else
-      system("/root/programming/pyscripts/uprompt.py");
+      system("/home/ubuntu/workspace/jjsh/pyscripts/uprompt.py");
 
     line = jjsh_read_line();
     args = jjsh_split_line(line);
