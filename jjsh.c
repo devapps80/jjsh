@@ -144,7 +144,6 @@ char **jjsh_split_line(char *line)
         exit(EXIT_FAILURE);
       }
     }
-
     token = strtok(NULL, JJSH_TOK_DELIM);
   }
   tokens[position] = NULL;
@@ -172,7 +171,6 @@ int jjsh_launch(char **args)
       wpid = waitpid(pid, &status, WUNTRACED);
     } while (!WIFEXITED(status) && !WIFSIGNALED(status));
   }
-
   return 1;
 }
 
@@ -190,7 +188,6 @@ int jjsh_execute(char **args)
       return (*builtin_func[i])(args);
     }
   }
-
   return jjsh_launch(args);
 }
 
@@ -219,11 +216,9 @@ void jjsh_loop(void)
 int main(int argc, char **argv)
 {
   // Load config files, if any
-
   // Run command loop
   jjsh_loop();
 
   // Perform any shutdown/cleanup
-
   return EXIT_SUCCESS;
 }
