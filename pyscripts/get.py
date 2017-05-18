@@ -8,13 +8,17 @@ parser = argparse.ArgumentParser()
 parser.add_argument('-strings', type=str, nargs='*', help='download files', required=False)
 args = parser.parse_args()
 
-source2 = os.listdir(os.getcwd())
+basepath = os.getcwd()
 destination = "/tmp/files1/"
 
 if len(sys.argv) == 1:
-    for files in source2:
-        print('{0} {1}'.format('Copying...', files))
-        shutil.copy(files, destination)
+    for fname in os.listdir(basepath):
+        path = os.path.join(basepath, fname)
+        if os.path.isdir(path):
+            print('{0} {1}'.format('Skipping...', path))
+            continue
+        print('{0} {1}'.format('Copying...', fname))
+        shutil.copy(fname, destination)
 else:
     for x in args.strings:
         try:
