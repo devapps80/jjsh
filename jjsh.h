@@ -8,6 +8,8 @@
 #define JJSH_EXTRA_BUFSIZE 1024
 #define JJSH_TOK_BUFSIZE 64
 #define JJSH_TOK_DELIM " \t\r\n\a"
+#define JJSH_MAX_CMD_LEN 128
+#define JJSH_HISTORY_COUNT 50
 
 void jjsh_loop(void);
 char *jjsh_read_line(void);

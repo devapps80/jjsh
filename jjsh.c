@@ -6,7 +6,6 @@
 #include "jjsh.h"
 
 
-
 // List of builtin commands, followed by their corresponding functions
 char *builtin_str[] = {
   "cd",
@@ -55,7 +54,7 @@ int jjsh_exit(char **args)
 
 int jjsh_get(char **args)
 {
-  char command[128];
+  char command[JJSH_MAX_CMD_LEN];
   if (args[1] == NULL) {
     snprintf(command, sizeof(command), "/home/ubuntu/workspace/jjsh/pyscripts/get.py");
   } else {
