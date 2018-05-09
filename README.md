@@ -1,3 +1,5 @@
+jjsh - Simple shell to execute commands
+
 Creating a shell with python built-in scripts
 
 get.py - A script to get the full contents of your current directory (excluding sub folders) or one file at a time
