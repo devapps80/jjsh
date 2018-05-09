@@ -56,9 +56,9 @@ int jjsh_get(char **args)
 {
   char command[JJSH_MAX_CMD_LEN];
   if (args[1] == NULL) {
-    snprintf(command, sizeof(command), "/home/ubuntu/workspace/jjsh/pyscripts/get.py");
+    snprintf(command, sizeof(command), "/Users/devapps80/shell_testing/jjsh/bin/get.py");
   } else {
-    snprintf(command, sizeof(command), "/home/ubuntu/workspace/jjsh/pyscripts/get.py -strings %s", args[1]);
+    snprintf(command, sizeof(command), "/Users/devapps80/shell_testing/jjsh/bin/get.py -strings %s", args[1]);
   }
   system(command);
   return 1;
@@ -66,20 +66,20 @@ int jjsh_get(char **args)
 
 int jjsh_help(char **args)
 {
-  system("/home/ubuntu/workspace/jjsh/pyscripts/help.py");
+  system("/Users/devapps80/shell_testing/jjsh/bin/help.py");
   return 1;
 }
 
 int jjsh_ipconfig(char **args)
 {
-  system("/home/ubuntu/workspace/jjsh/pyscripts/ipconfig.py");
+  system("/Users/devapps80/shell_testing/jjsh/bin/ipconfig.py");
   return 1;
 }
 
 int jjsh_pwd(char **args)
 {
 
-  system("/home/ubuntu/workspace/jjsh/pyscripts/pwd.py");
+  system("/Users/devapps80/shell_testing/jjsh/bin/pwd.py");
   return 1;
 }
 
@@ -200,9 +200,9 @@ void jjsh_loop(void)
   do {
 
     if (getuid() == 0)
-      system("/home/ubuntu/workspace/jjsh/pyscripts/rprompt.py");
+      system("/Users/devapps80/shell_testing/jjsh/bin/rprompt.py");
     else
-      system("/home/ubuntu/workspace/jjsh/pyscripts/uprompt.py");
+      system("/Users/devapps80/shell_testing/jjsh/bin/uprompt.py");
 
     line = jjsh_read_line();
     args = jjsh_split_line(line);
